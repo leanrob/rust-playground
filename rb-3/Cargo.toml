@@ -1,0 +1,6 @@
+[package]
+name = "rb-3"
+version = "0.1.0"
+authors = ["Rob Byrne <rob@leanrob.com>"]
+
+[dependencies]

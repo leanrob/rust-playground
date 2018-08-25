@@ -13,3 +13,4 @@ http://huonw.github.io/primal/primal/
 - Find is a number is or is not prime
 - Find all primes up to a point
 - Find the nth prime
+- Factorization, breaking a number down into its divisors

@@ -18,5 +18,26 @@ fn main() {
         Some(number) => println!("{}th prime is {}", n, number),
         None => println!("I just don't know about {}th prime", n),
     }
+
+    // Factorization
+
+    // number of divisors
+    println!("{:?}", num_divisors(2610, &sieve));
+    println!("{:?}", num_divisors(420, &sieve));
+    println!("{:?}", num_divisors(720720, &sieve));
+    println!("{:?}", num_divisors(55440, &sieve));
+
+    // all prime divisors and their occurrences
+    // result Ok([(2, 1), (3, 2), (5, 1), (29, 1)]) == (2 3 3 5 29)
     println!("{:?}", sieve.factor(2610));
+}
+
+// calculate all of the numbers that can divide into a number
+// division ,must end in a whole number
+fn num_divisors(n: usize, primes: &Sieve) -> Option<usize> {
+    // match only numbers that are factors of the number passed in
+    match primes.factor(n) {
+        Ok(factors) => Some(factors.into_iter().fold(1, |acc, (_, x)| acc * (x + 1))),
+        Err(_) => None,
+    }
 }
